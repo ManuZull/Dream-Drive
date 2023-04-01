@@ -91,6 +91,11 @@ li.nav-item {
 footer {
     background: #333333;
     padding: 1em;
+    color: #fff;
+    padding-top: 40px;
+}
+footer #address-column{
+
 }
 
 footer figure {
