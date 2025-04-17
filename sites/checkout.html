@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dream Drive</title>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <link rel="stylesheet" href="../CSS/all.css">
+<link rel="icon" type="icon" href="../img/dd.ico">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">    
+    <link rel="stylesheet" href="PHP/enviar_formulario.php">    
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/tyv0azy.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../js/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="../js/slick/slick.min.js"></script>
+    <script src="../js/slick_config.js" defer></script>		
+    <script src="..js/checks-alerts.js" defer></script>
+
+    
+    <script type="text/javascript" src="../js/details.js"></script>
+    <script type="text/javascript" src="../js/cardsdata.js"></script>		
+    <script type="text/javascript" src="../js/viewData.js"></script>	
+    <script type="text/javascript" src="../js/enpantion.js"></script>
+    
+</head>
+
+<body>
+   
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Dream Drive</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">              
+              <li class="nav-item dropdown">
+                  <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      NEW
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="../sites/new/inventory.html">New Vehicle Inventory</a></li>
+                      <li><a class="dropdown-item" href="../sites/new/lightning.html">2022 Ford Lightning</a></li>
+                      <li><a class="dropdown-item" href="../sites/new/bronco.html">2022 Ford Bronco</a></li>
+                      <div class="dropdown-divider"></div>
+                      <li><a class="dropdown-item" href="../sites/new/specials.html">New Vehicle Specials</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="../index.html">HOME</a>
+              </li>              
+              <li class="nav-item active">
+              <a class="nav-link" href="../sites/used.html">USED</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="../sites/service.html">SERVICE</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="../sites/parts.html">PARTS</a>
+              </li>
+              <li class="nav-item">
+              <a class="nav-link" href="../sites/about.html">ABOUT</a>
+              </li>               
+              <li class="nav-item">
+                <a class="nav-link" href="../sites/contact.html">CONTACT</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about"><img src="../img/busqueda-de-lupa.png" class="lupa" alt=""></a>
+                 
+              </li>
+          </ul>
+          </div>
+        </div>
+      </nav>
+   </header>
+    <!-- CONTENIDO DEL MODAL -->
+    <div class="checkout-container">
+        <h1>Checkout</h1>
+        
+        <!-- Product Details Section -->
+        <div class="product-details">
+            <img id="car-image" src="${card.image}" alt="${card.title}" class="product-image">
+            <div class="product-info">
+                <h5 id="car-title" class="product-title">${card.title}</h5>
+                <p id="car-description" class="product-description">${card.description}</p>
+                <div id="car-price" class="product-price">${card.price}</div>
+            </div>
+        </div>
+
+        <!-- Checkout Form -->
+        <form class="checkout-form" onsubmit="return handleSubmit(event);">
+            <section class="shipping-info">
+                <h2>Shipping Information</h2>
+                <!-- Full Name Input -->
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" required>
+                
+                <!-- Email Input -->
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" name="contact-email" placeholder="Enter your email address" required>
+                
+                <!-- Shipping Address Input -->
+                <label for="delivery-address">Shipping Address</label>
+                <input type="text" id="delivery-address" name="delivery-address" placeholder="Enter your shipping address" required>
+                
+                <!-- Shipping Method Select -->
+                <label for="shipping-method">Shipping Method</label>
+                <select id="shipping-method" name="shipping-method" required>
+                    <option value="" disabled selected>Select a shipping method</option>
+                    <option value="standard">Standard Shipping - 5-7 days</option>
+                    <option value="express">Express Shipping - 2-3 days</option>
+                    <option value="overnight">Overnight Shipping</option>
+                </select>
+            </section>
+        
+            <section class="payment-info">
+                <h2>Payment Information</h2>
+                
+                <!-- Card Number Input -->
+                <label for="card-info">Card Number</label>
+                <input type="text" id="card-info" name="card-info" placeholder="Enter your card number" required>
+                
+                <!-- Expiration Date Input -->
+                <label for="expiration-date">Expiration Date</label>
+                <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YY" required>
+                
+                <!-- Security Code Input -->
+                <label for="security-code">Security Code</label>
+                <input type="text" id="security-code" name="security-code" placeholder="Enter security code" required>
+                
+                <!-- Payment Method Select -->
+                <label for="payment-method">Payment Method</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="" disabled selected>Select a Credit/Debit Card</option>
+                    <option value="credit-card">Visa</option>
+                    <option value="paypal">Master Card</option>
+                    <option value="bank-transfer">American Express</option>
+                </select>
+            </section>
+        
+            <!-- Submit Button -->
+            <div class="button-container">
+              <button class="btn-back" onclick="window.location.href='../sites/modal.html';">Back</button>
+              <button class="btn-Complete" onclick="window.location.href='../sites/sended.html';">Complete Purchase</button>
+          </div>
+          
+        </form>
+        
+    </div>
+    <script>
+      // Get the car index from the URL query string (this will come from modal.html or used.html)
+      const params = new URLSearchParams(window.location.search);
+      const carIndex = params.get('car'); // Get the 'car' parameter from the URL
+    
+      if (carIndex !== null) {
+        const car = carsData[carIndex]; // Access the car data
+    
+        // Populate the checkout page with the car details
+        document.getElementById('car-image').src = car.image;
+        document.getElementById('car-title').innerText = car.name;
+        document.getElementById('car-description').innerText = car.description;
+        document.getElementById('car-price').innerText = car.price;
+      }
+    </script>
+    <!--FIN DEL CONTENIDO DEL MODAL-->
+   <footer>
+    <div class="row justify-content-between">
+      <div class="col-4" id="address-column">
+          <p>145600 Baker Street, Richmond</p> 
+          <p>Sales:  214-476-7802</p>
+          <p>Parts:  214-476-7801</p>
+          <p>Service:  214-476-7800</p>            
+      </div>
+
+     <div class="col-4" id="main-column">
+          <figure>            
+             <img class="centrado" src="img/logo2.png" alt="Logo de Leadbox blanco">               
+         </figure>
+         <ul>
+             <li><a href="https://es-la.facebook.com/"><i class="fa-brands fa-facebook"></i></i></a></li>
+             <li><a href="https://twitter.com/?lang=es"><i class="fa-brands fa-twitter-square"></i></a></li>
+             <li><a href="https://www.youtube.com/"><i class="fa-brands fa-youtube"></i></a></li>
+             <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></i></a></li>
+             <li><a href="https://ar.pinterest.com/"><i class="fa-brands fa-printeresr"></i></a></li>
+             <li><a href="https://www.linkedin.com/home"><i class="fa-brands fa-linkedin"></i></a></li>
+         </ul>
+         <p class="footer-texto">Sitemap  |  Terms and Conditions  |  Privacy Policy  |  Dealership © 2022  |  Powered by Dream Drive</p>
+         
+     </div>
+     <div class="col-4" id="schedule-column">
+
+      <select class="form-select">
+          <option selected>Sales</option>
+          <option value="service">SERVICE</option>
+          <option value="parts">PARTS</option>            
+        </select>
+    
+      <div div class="row">
+
+        <div class="col-6">
+          <p>Monday: 8:00am-8:00pm</p>
+          <p>Tuesday: 8:00am-8:00pm</p>
+          <p>Wednesday: 8:00am-8:00pm</p>
+          <p>Thursday: 8:00am-8:00pm</p>
+        </div>
+        <div class="col-6">
+          <p>Friday: 8:00am-8:00pm</p>
+          <p>Saturday: 8:00am-5:00pm</p>
+          <p>Sunday: Closed</p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+         
+ </footer>
+</body>
+</html>
